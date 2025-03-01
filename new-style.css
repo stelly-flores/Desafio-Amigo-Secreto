@@ -1,0 +1,290 @@
+:root {
+    --color-primary: #f8b08e; /* Color principal rosa */
+    --color-secondary: #FFF0F5; /* Color secundario rosa claro */
+    --color-tertiary: #FFC1E3; /* Color terciario rosa pastel */
+    --color-button: #8e34d8; /* Color del botón rosa fuerte */
+    --color-button-hover: #4f85fa; /* Color del botón al pasar el ratón */
+    --color-text: #333333; /* Color del texto */
+    --color-white: #FFFFFF; /* Color blanco */
+}
+
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-tertiary));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Inter", sans-serif;
+    overflow-y: auto; /* Permite el desplazamiento vertical */
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    max-width: 800px;
+    background-color: var(--color-white);
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative; /* Añadido para posicionar el botón de sorteo */
+}
+
+/* Banner */
+.header-banner {
+    flex: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-tertiary));
+    color: var(--color-white);
+    font-size: 36px;
+    font-family: "Merriweather", serif;
+    font-weight: 900;
+    font-style: italic;
+}
+
+.header-banner img {
+    max-width: 50%; /* Ajusta el tamaño de la imagen */
+    height: auto;
+    border-radius: 20px;
+}
+
+/* Sección de entrada */
+.input-section {
+    flex: 60%;
+    background-color: var(--color-secondary);
+    border-radius: 20px 20px 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+    position: relative; /* Añadido para posicionar el botón de sorteo */
+    overflow-y: auto; /* Permite el desplazamiento vertical dentro de la sección */
+}
+
+/* Títulos */
+.main-title {
+    font-size: 36px;
+    font-family: "Merriweather", serif;
+    font-weight: 900;
+    font-style: italic;
+    color: var(--color-primary);
+}
+
+.section-title {
+    font-family: "Inter", sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin: 10px 0;
+    text-align: center;
+}
+
+/* Contenedores de entrada y botón */
+.input-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 600px;
+    margin-top: 20px;
+}
+
+.input-name {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid var(--color-primary);
+    border-radius: 25px 0 0 25px;
+    font-size: 16px;
+}
+
+.button-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Añade un espacio entre los botones */
+    margin-top: 10px; /* Reduce el margen superior */
+}
+
+/* Estilos de entrada de texto */
+.input-title {
+    flex: 1;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: 2px solid var(--color-primary);
+    border-right: none;
+    border-radius: 25px 0 0 25px;
+    font-family: "Merriweather", serif;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos de botón */
+button {
+    padding: 15px 30px;
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    border: 2px solid var(--color-primary);
+    border-radius: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.button-add {
+    background-color: var(--color-button);
+    color: var(--color-white);
+    border-radius: 0 25px 25px 0;
+}
+
+.button-add:hover {
+    background-color: var(--color-button-hover);
+}
+
+/* Listas */
+ul {
+    list-style-type: none;
+    color: var(--color-text);
+    font-family: "Inter", sans-serif;
+    font-size: 18px;
+    margin: 20px 0;
+    padding: 0;
+}
+
+.result-list {
+    margin-top: 15px;
+    color: #05DF05;
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Lista de nombres */
+.name-list {
+    width: 100%;
+    margin-top: 20px;
+    padding: 0 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.name-list li {
+    padding: 10px;
+    margin: 10px;
+    background-color: var(--color-secondary);
+    border: 2px solid var(--color-primary);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.name-list li:not(:last-child)::after {
+    content: "";
+}
+
+.name-list li span {
+    font-weight: bold;
+    color: var(--color-primary);
+}
+
+.name-list li button {
+    background-color: var(--color-button);
+    color: var(--color-white);
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.name-list li button:hover {
+    background-color: var(--color-button-hover);
+}
+
+/* Animación para mostrar y ocultar nombres */
+.name-list li.added {
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+.name-list li.removed {
+    transform: scale(0.9);
+    opacity: 0;
+}
+
+/* Botón de sortear título */
+.button-draw {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px; /* Ajusta el padding para que no se vea estirado */
+    color: var(--color-white);
+    background-color: var(--color-button);
+    font-size: 16px;
+    border: 2px solid var(--color-primary);
+    border-radius: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Añade una transición suave */
+    width: auto; /* Ajusta el ancho automáticamente */
+    white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+}
+
+.button-draw img {
+    margin-right: 10px;
+    width: 24px; /* Ajusta el tamaño de la imagen */
+    height: 24px; /* Ajusta el tamaño de la imagen */
+}
+
+.button-draw:hover {
+    background-color: var(--color-button-hover);
+    transform: scale(1.05); /* Añade un pequeño aumento al pasar el ratón */
+}
+
+.button-draw.active {
+    background-color: var(--color-button-hover);
+    transform: scale(1.1); /* Aumenta el tamaño cuando está activo */
+}
+
+/* Botón de actualizar sorteo */
+.button-refresh {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px; /* Ajusta el padding para que no se vea estirado */
+    color: var(--color-white);
+    background-color: var(--color-button);
+    font-size: 16px;
+    border: 2px solid var(--color-primary);
+    border-radius: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Añade una transición suave */
+    width: auto; /* Ajusta el ancho automáticamente */
+    white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+}
+
+.button-refresh img {
+    margin-right: 10px;
+    width: 24px; /* Ajusta el tamaño de la imagen */
+    height: 24px; /* Ajusta el tamaño de la imagen */
+}
+
+.button-refresh:hover {
+    background-color: var(--color-button-hover);
+    transform: scale(1.05); /* Añade un pequeño aumento al pasar el ratón */
+}
+
+.button-refresh.active {
+    background-color: var(--color-button-hover);
+    transform: scale(1.1); /* Aumenta el tamaño cuando está activo */
+}
